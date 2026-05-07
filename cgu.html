@@ -136,6 +136,53 @@
     <script>
       self.__next_f.push([1, "1c:I[91530,[\"/./0y4-eio1c6m2h.js\",\"/./0r55phvf3mn69.js\"],\"IconMark\"]\n16:null\n1b:[[\"$\",\"title\",\"0\",{\"children\":\"Pyxelze - Steganographic Archive Explorer\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"Hide files in plain sight. Create, open, and extract PNG archives with steganography and AES-256-GCM encryption.\"}],[\"$\",\"meta\",\"2\",{\"name\":\"author\",\"content\":\"RoxasYTB\"}],[\"$\",\"meta\",\"3\",{\"name\":\"keywords\",\"content\":\"steganography,encryption,archive,PNG,security,privacy\"}],[\"$\",\"link\",\"4\",{\"rel\":\"shortcut icon\",\"href\":\"/logo.png\"}],[\"$\",\"link\",\"5\",{\"rel\":\"icon\",\"href\":\"/logo.png\"}],[\"$\",\"link\",\"6\",{\"rel\":\"apple-touch-icon\",\"href\":\"/logo.png\"}],[\"$\",\"$L1c\",\"7\",{}]]\n"])
     </script>
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const konamiCode = [
+    "ArrowUp", "ArrowUp",
+    "ArrowDown", "ArrowDown",
+    "ArrowLeft", "ArrowRight",
+    "ArrowLeft", "ArrowRight",
+    "b", "a"
+  ];
+
+  let input = [];
+
+  window.addEventListener("keydown", (e) => {
+    input.push(e.key);
+
+    // garder seulement la longueur du code
+    if (input.length > konamiCode.length) {
+      input.shift();
+    }
+
+    // vérifie correspondance
+    if (input.join(",") === konamiCode.join(",")) {
+      triggerEasterEgg();
+      input = [];
+    }
+  });
+
+  function triggerEasterEgg() {
+    // éviter doublon
+    if (document.getElementById("konami-iframe")) return;
+
+    const iframe = document.createElement("iframe");
+    iframe.id = "konami-iframe";
+    iframe.src = "https://bot471912-dot.github.io/Moomuse/esterroll.mp4";
+    iframe.style.position = "fixed";
+    iframe.style.top = "0";
+    iframe.style.left = "0";
+    iframe.style.width = "100vw";
+    iframe.style.height = "100vh";
+    iframe.style.zIndex = "999999";
+    iframe.style.border = "none";
+    iframe.allow = "autoplay";
+
+    document.body.appendChild(iframe);
+  }
+});
+</script>
   </body>
   <!-- Mirrored from pyxelze.com/cgu by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 08 Apr 2026 10:23:40 GMT -->
 </html>
